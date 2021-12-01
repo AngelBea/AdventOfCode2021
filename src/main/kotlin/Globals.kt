@@ -1,0 +1,1 @@
+const val INPUT_DAY_1_1 = "/inputs/InputDay1_1"
