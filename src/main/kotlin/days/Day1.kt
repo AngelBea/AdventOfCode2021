@@ -1,11 +1,12 @@
 package days
 
-import INPUT_DAY_1_1
+import INPUT_DAY_1
 import ReaderUtils
+import interfaces.IDay
 
 class Day1 : IDay {
     override var result: String = ""
-    override var reader = ReaderUtils(INPUT_DAY_1_1)
+    override var reader = ReaderUtils(INPUT_DAY_1)
 
     override fun first() {
         val lines = reader.getNumberLines()
