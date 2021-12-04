@@ -7,4 +7,5 @@ class ReaderUtils(uri: String) {
 
     fun getNumberLines(): List<Int> = file.readLines().map{ it.toInt() }
     fun getLines(): List<String> = file.readLines()
+    fun getFullFile() = this.file.readText()
 }
