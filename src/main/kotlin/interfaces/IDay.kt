@@ -13,7 +13,7 @@ interface IDay {
     fun second(){}
 
     fun printResult(){
-        "The $className ${Thread.currentThread().stackTrace[3].methodName} result is: $result".let(::println)
+        "The $className ${Thread.currentThread().stackTrace.find { it.methodName == "first" || it.methodName == "second" }!!.methodName} result is: $result".let(::println)
     }
 
     fun getResult(){
