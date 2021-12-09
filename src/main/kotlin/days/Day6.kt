@@ -18,6 +18,7 @@ class Day6: IDay {
         lanternFishCalculationOptimized(256)
     }
 
+    //Brute code for solution, not working on part 2.
     private fun lanternFishCalculation(days: Int){
         val lanternFishSchool = reader.getFullFile().split(",").map{ it.toInt() }.map { LanternFish(it, null) }
 
@@ -53,16 +54,11 @@ class Day6: IDay {
         val lanternFishSchool = reader.getFullFile().split(",").map{ it.toInt() }
         val lanterns = Array(9){0.toLong()}
 
-        val syncLanterns = lanternFishSchool.groupBy { it }.map { it.key to it.value.count().toLong() }.forEach {
+        lanternFishSchool.groupBy { it }.map { it.key to it.value.count().toLong() }.forEach {
             lanterns[it.first] += it.second
         }
 
         for (i in 1..days){
-            if (days == 80){
-                "Day $i".let(::println)
-                lanterns.contentDeepToString().let(::println)
-            }
-
             val auxLantern = lanterns.clone()
 
             (8 downTo 0).forEach {
