@@ -35,12 +35,12 @@ class Day7: IDay {
         val crabPositions = reader.getFullFile().split(",").map { it.toInt() }
 
         val bestHorPos = (crabPositions.sum().toDouble() / crabPositions.size.toDouble()).roundToInt()
-        val considerAdyacentPos = listOf(bestHorPos - 1, bestHorPos, bestHorPos + 1)
+        val considerAdjacentPos = listOf(bestHorPos - 1, bestHorPos, bestHorPos + 1)
 
         val positionsCount = crabPositions.groupBy { it }.map { it.key to it.value.count() }
 
         val fuelNeeded = mutableListOf<Trio<Int, Int, Int>>()
-        considerAdyacentPos.forEach { adyacentPos ->
+        considerAdjacentPos.forEach { adyacentPos ->
             positionsCount.forEach { positionCount ->
                 fuelNeeded.add(adyacentPos to positionCount.first tr calculateAdvanceOfCrab(adyacentPos, positionCount.first) * positionCount.second)
             }
