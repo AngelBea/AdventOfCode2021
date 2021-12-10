@@ -7,4 +7,5 @@ fun main(args: Array<String>) {
     Day4().getResult()
     Day5(1000).getResult()
     Day6().getResult()
+    Day7().getResult()
 }
